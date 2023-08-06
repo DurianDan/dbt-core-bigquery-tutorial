@@ -24,3 +24,7 @@
         }}
         ```
 - After changing any **config** to the **targets**, use `dbt run --full-refresh` to takes affect in the data warehouse.
+
+## UI
+- For **first time running the docs**: `dbt docs generate`, new config will be stored in the folder `target/manifest.json` and `target/catalog.json`,
+- For serving the docs into a server: `dbt docs serve`
