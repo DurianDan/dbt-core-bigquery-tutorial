@@ -3,3 +3,24 @@
 - In ther `profile.yaml`, parsing the credential file:
     - If you want to parse the whole credential json file, the field `method` should be `service-account-json`
     - Or only the path to the credential file, the field `method` should be `service-account`
+
+## Create models
+- Config the model (in dir `./jaffle_shop/models/*.sql`) to be a `view` or an actual `table` in 2 ways (in 2 levels):
+    - At the **Project** level (can apply to all models): in the `dbt_project.yml` file:
+        ```yaml
+        models:
+            jaffle_shop:
+                +materialized: table # apply to all models in project. global config
+                # Config indicated by + and applies to all files under models/example/
+                example:
+                +materialized: view # overide global config
+        ```
+    - At the **model** level (will **overide** the config in `dbt_project.yml` file), at the top of each `.sql` file (*definning a model*), add these line of code:
+        ```sql
+        {{
+            config(
+                meterialized='view'
+            )
+        }}
+        ```
+- After changing any **config** to the **targets**, use `dbt run --full-refresh` to takes affect in the data warehouse.
