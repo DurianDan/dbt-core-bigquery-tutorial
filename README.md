@@ -5,7 +5,6 @@
 ## Wiki
 1. Project Authentication with **BigQuery**, using: `jaffle_shop/profiles.yml`
     - [Optional] Create the `profiles.yml` file in the `jaffle_shop` folder. using the template of `jaffle_shop/sample.profiles.yml`.
-
     - The `keyfile_json` field: is the **Google Auth JSON Credential** file generated for BigQuery service
 
 
