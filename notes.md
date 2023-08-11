@@ -25,6 +25,16 @@
         ```
 - After changing any **config** to the **targets**, use `dbt run --full-refresh` to takes affect in the data warehouse.
 
+## references (`ref`)
+- use `ref` in script to reference other models:
+```sql
+with customers as (
+    select * from {{ ref('stg_customers')}}
+)
+```
+- To run models in a folder, execute `dbt run --models`
+    - E.g.: To run every model inside **folder2**, inside **folder1**: `dbt run --models folder1.folder2.*`
+
 ## UI
 - For **first time running the docs**: `dbt docs generate`, new config will be stored in the folder `target/manifest.json` and `target/catalog.json`,
 - For serving the docs into a server: `dbt docs serve`
