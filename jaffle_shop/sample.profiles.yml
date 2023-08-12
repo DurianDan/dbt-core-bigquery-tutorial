@@ -5,21 +5,10 @@ jaffle_shop:
       job_execution_timeout_seconds: 300
       job_retries: 1
       location: US
-      method: service-account-json
+      method: service-account
       priority: interactive
       project: <name of the GCP project containing your BiGQuery warehouse>
       threads: 1
       type: bigquery
-      keyfile_json:
-        type: "<`type` from service auth json file >" 
-        project_id: "<`project_id` from service auth json file >" 
-        private_key_id: "<`private_key_id` from service auth json file >"
-        private_key: "<`private_key` from service auth json file >" 
-        client_email: "<`client_email` from service auth json file >"
-        client_id: "<`client_id` from service auth json file >" 
-        auth_uri: "<`auth_uri` from service auth json file >" 
-        token_uri: "<`token_uri` from service auth json file >" 
-        auth_provider_x509_cert_url: "<`auth_provider_x509_cert_url` from service auth json file >" 
-        client_x509_cert_url: "<`client_x509_cert_url` from service auth json file >"
-        universe_domain: "<`universe_domain` from service auth json file >"
+      keyfile: ./<name of your google api BigQuery credential file>.json
   target: dev
