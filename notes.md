@@ -26,7 +26,7 @@
 - After changing any **config** to the **targets**, use `dbt run --full-refresh` to takes affect in the data warehouse.
 
 ## references (`ref`)
-- use `ref` in script to reference other models:
+- use `ref` in script to reference other models (in others files):
 ```sql
 with customers as (
     select * from {{ ref('stg_customers')}}
